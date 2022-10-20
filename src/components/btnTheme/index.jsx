@@ -19,8 +19,9 @@ const BtnTheme = () => {
     <btn.Container>
       <p>Dark Mode</p>
       <div onClick={handleClick} className={`toggle ${nameTheme}`}>
-        <div className="circle"></div>
+        <label for="toggle"></label>
       </div>
+      {theme ? <btn.BodyColorIn /> : <btn.BodyColorOut />}
     </btn.Container>
   );
 };

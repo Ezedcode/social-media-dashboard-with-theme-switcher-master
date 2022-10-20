@@ -1,60 +1,52 @@
-import styled, { keyframes } from "styled-components";
-
-const LeftRight = keyframes`
-  from {
-    left: 60%;
-  }
-  
-  to {
-    margin-left: 5%;
-  }
-`;
-
-const RightLeft = keyframes`
-  from {
-    margin-left: 5%;
-  }
-  
-  to {
-    margin-left: 60%;
-  }
-`;
+import styled, { createGlobalStyle } from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  align-items: center;
 
-  & .toggle {
-    position: relative;
-    width: 70px;
-    height: 35px;
-    border-radius: 17px;
+  & p {
+    padding-right: 10px;
+  }
+
+  & .light label {
     background-color: hsl(230, 22%, 74%);
-    display: flex;
-    align-items: center;
   }
 
-  & .light {
+  & .dark label {
+    background: linear-gradient(
+      to right,
+      hsl(210, 78%, 56%),
+      hsl(146, 68%, 55%)
+    );
   }
 
-  & .dark {
-  }
-
-  & .circle {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    border-radius: 17px;
+  & .light label:before {
+    transform: translateX(22px);
     background-color: hsl(0, 0%, 100%);
   }
 
-  & .light .circle {
-    right: 0;
-    animation: ${RightLeft} 0.2s !important;
+  & .dark label:before {
+    background-color: hsl(232, 19%, 15%);
   }
 
-  & .dark .circle {
-    left: 0;
-    animation: ${LeftRight} 0.2s;
+  & label {
+    display: block;
+    position: relative;
+    width: 57px;
+    height: 32px;
+    border-radius: 1rem;
+  }
+
+  & label:before {
+    display: block;
+    position: absolute;
+    top: 3.5px;
+    content: "";
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
   }
 
   @media only screen and (max-width: 375px) {
@@ -62,4 +54,35 @@ export const Container = styled.div`
     justify-content: space-between;
   }
 `;
-//
+
+export const BodyColorIn = createGlobalStyle`
+  body {
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(230, 17%, 14%);
+    transition: background-color .5s linear;
+  }
+
+  header {
+    background-color: hsl(232, 19%, 15%);
+    transition: background-color .5s linear;
+  }
+
+  .card{
+    background-color: hsl(228, 28%, 20%);
+  }
+`;
+
+export const BodyColorOut = createGlobalStyle`
+  body,
+  header {
+    transition: background-color .5s linear;
+  }
+
+  header {
+    background-color: hsl(225, 100%, 98%);
+  }
+
+  .card{
+    background-color: hsl(227, 47%, 96%);
+  }
+`;

@@ -7,11 +7,13 @@ const Header = () => {
   return (
     <header.Container>
       <nav>
-        <h1>Social Media Dash Board</h1>
-        <p>Total Followers: 23,004</p>
+        <nav>
+          <h1>Social Media Dash Board</h1>
+          <p>Total Followers: 23,004</p>
+        </nav>
+        <hr />
+        <BtnTheme />
       </nav>
-      <hr />
-      <BtnTheme />
     </header.Container>
   );
 };
