@@ -8,6 +8,11 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  }
+
+  .p {
+    font-weight: bolder;
   }
 `;
 

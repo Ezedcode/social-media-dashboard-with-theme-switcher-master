@@ -49,7 +49,7 @@ export const Container = styled.div`
     transition: transform 0.3s ease;
   }
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 1182px) {
     width: 100%;
     justify-content: space-between;
   }
@@ -60,6 +60,14 @@ export const BodyColorIn = createGlobalStyle`
     color: hsl(0, 0%, 100%);
     background-color: hsl(230, 17%, 14%);
     transition: background-color .5s linear;
+  }
+
+  h1,h2,h3 {
+    color: hsl(0, 0%, 100%);
+  }
+
+  p {
+    color: hsl(228, 34%, 66%);
   }
 
   header {
@@ -78,6 +86,20 @@ export const BodyColorOut = createGlobalStyle`
     transition: background-color .5s linear;
   }
 
+
+  h1,h2,h3 {
+    color: hsl(230, 17%, 14%);
+  }
+
+  main > h2 {
+    color: hsl(228, 12%, 44%);
+  }
+
+  p {
+    color: hsl(228, 12%, 44%);
+  }
+
+  
   header {
     background-color: hsl(225, 100%, 98%);
   }

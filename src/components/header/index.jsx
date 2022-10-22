@@ -6,14 +6,14 @@ import * as header from "./styles";
 const Header = () => {
   return (
     <header.Container>
-      <nav>
-        <nav>
-          <h1>Social Media Dash Board</h1>
+      <div>
+        <div>
+          <h2>Social Media Dash Board</h2>
           <p>Total Followers: 23,004</p>
-        </nav>
+        </div>
         <hr />
         <BtnTheme />
-      </nav>
+      </div>
     </header.Container>
   );
 };
